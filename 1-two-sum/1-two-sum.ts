@@ -1,21 +1,20 @@
 function twoSum(nums: number[], target: number): number[] {
-    
-    let sum: number[] = [];
-    let hashTable: Record<string, number> = {} 
+  const res: number[] = [];
+  const hashTable: Record<string, number> = {};
 
-    for(let n in nums)
-    {
-        let com = target - nums[n];
+  let index = 0;
+  for (const num of nums) {
+    const findValue = target - num;
 
-        if(com in hashTable)
-        {
-            sum.push(nums.indexOf(com))
-            sum.push(nums.lastIndexOf(nums[n]))
-            return sum;
-        }
-        
-        hashTable[nums[n]] = nums[n]
+    if (findValue in hashTable) {
+      res.push(nums.indexOf(findValue));
+      res.push(nums.lastIndexOf(num));
+      return res;
     }
 
-    return sum;
-};
+    hashTable[nums[index]] = nums[index];
+    index++;
+  }
+
+  return res;
+}
