@@ -7,12 +7,12 @@ function twoSum(nums: number[], target: number): number[] {
     const findValue = target - num;
 
     if (findValue in hashTable) {
-      res.push(nums.indexOf(findValue));
-      res.push(nums.lastIndexOf(num));
+      res.push(hashTable[findValue]);
+      res.push(index);
       return res;
     }
 
-    hashTable[nums[index]] = nums[index];
+    hashTable[nums[index]] = index;
     index++;
   }
 
