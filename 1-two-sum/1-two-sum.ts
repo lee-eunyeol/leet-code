@@ -8,11 +8,11 @@ function twoSum(nums: number[], target: number): number[] {
 
     if (findValue in hashTable) {
       res.push(nums.indexOf(findValue));
-      res.push(index);
+      res.push(nums.lastIndexOf(num));
       return res;
     }
 
-    hashTable[nums[index]] = index;
+    hashTable[nums[index]] = nums[index];
     index++;
   }
 
