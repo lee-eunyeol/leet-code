@@ -8,5 +8,5 @@ function sortArrayByParity(nums: number[]): number[] {
       result2.push(nums.shift());
     }
   }
-  return result.concat(result2);
+  return [...result,...result2];
 }
