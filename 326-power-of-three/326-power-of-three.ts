@@ -1,9 +1,6 @@
 function isPowerOfThree(n: number): boolean {
-  if (n<=0) return false;
-  while (n > 1) {
-    const least = n % 3;
-    if (least !== 0) return false;
-    n = n / 3 - least;
-  }
-  return true
+  if (n === 1) return true;
+  else if (n % 5 === 0) return false;
+  else if (n % 3 === 0) return isPowerOfThree(n / 3);
+  else return false;
 }
